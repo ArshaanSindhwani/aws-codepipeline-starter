@@ -3,7 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-  - echo "Hello World from BuildSpec.yml"
+      - echo "Hello World from BuildSpec.yml"
 
 artifacts:
   files:
