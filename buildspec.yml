@@ -8,8 +8,18 @@ env:
 phases:
   build:
     commands:
-      - echo "Hello World from BuildSpec.yml"
-      - echo "$SECRET_USERNAME"
+      - echo "Logging in to Docker registry"
+      - echo "$SECRET_USERNAME" | docker login -u "$SECRET_USERNAME" --password-stdin
+
+build:
+    commands:
+      - echo "Building Docker Image..."
+      - docker build -t arshaansindhwani/arsenal-db:latest .
+
+post_build:
+    commands:
+      - echo "Pushing Docker Image..."
+      - docker push arshaansindhwani/arsenal-db:latest .
 
 artifacts:
   files:
