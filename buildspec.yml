@@ -6,7 +6,7 @@ env:
     SECRET_PASSWORD: "pipeline-docker-secret-auth:password"
 
 phases:
-  build:
+  pre-build:
     commands:
       - echo "Logging in to Docker registry"
       - echo "$SECRET_USERNAME" | docker login -u "$SECRET_USERNAME" --password-stdin
