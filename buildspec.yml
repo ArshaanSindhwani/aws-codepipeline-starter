@@ -19,7 +19,7 @@ build:
 post_build:
     commands:
       - echo "Pushing Docker Image..."
-      - docker push arshaansindhwani/arsenal-db:latest .
+      - docker push arshaansindhwani/arsenal-db:latest
 
 artifacts:
   files:
